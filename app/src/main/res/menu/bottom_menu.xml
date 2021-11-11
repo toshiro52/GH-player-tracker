@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Player"
+        android:icon="@drawable/temp_vector"
+        android:id="@+id/playerStatFragment"/>
+    <item
+        android:title="Item"
+        android:icon="@drawable/temp_vector"
+        android:id="@+id/itemListFragment"/>
+    <item
+        android:title="Attack Deck"
+        android:icon="@drawable/temp_vector"
+        android:id="@+id/attackDeckFragment"/>
+    <item
+        android:title="Perks"
+        android:icon="@drawable/temp_vector"
+        android:id="@+id/perkFragment"/>
+    <item
+        android:title="Abilities"
+        android:icon="@drawable/temp_vector"
+        android:id="@+id/actionCardFragment"/>
+</menu>

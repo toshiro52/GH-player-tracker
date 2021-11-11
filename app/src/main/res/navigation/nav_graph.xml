@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/playerStatFragment">
+
+    <fragment
+        android:id="@+id/playerStatFragment"
+        android:name="com.example.playertracker.PlayerStatFragment"
+        android:label="fragment_player_stat"
+        tools:layout="@layout/fragment_player_stat" />
+    <fragment
+        android:id="@+id/itemListFragment"
+        android:name="com.example.playertracker.ItemListFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list" />
+    <fragment
+        android:id="@+id/attackDeckFragment"
+        android:name="com.example.playertracker.AttackDeckFragment"
+        android:label="fragment_attack_deck"
+        tools:layout="@layout/fragment_attack_deck" />
+    <fragment
+        android:id="@+id/perkFragment"
+        android:name="com.example.playertracker.PerkFragment"
+        android:label="fragment_perk"
+        tools:layout="@layout/fragment_perk" />
+    <fragment
+        android:id="@+id/actionCardFragment"
+        android:name="com.example.playertracker.ActionCardFragment"
+        android:label="fragment_action_card"
+        tools:layout="@layout/fragment_action_card" />
+</navigation>

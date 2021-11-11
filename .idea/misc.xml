@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/activity_main.xml" value="0.23822463768115942" />
+        <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/activity_main.xml" value="0.22503725782414308" />
+        <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/blank_fragment.xml" value="0.27355072463768115" />
+        <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/menu/bottom_menu.xml" value="0.31743589743589745" />
       </map>
     </option>
   </component>
