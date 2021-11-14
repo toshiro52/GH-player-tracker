@@ -1,15 +1,17 @@
 package com.example.playertracker.realm
 
-import com.example.playertracker.ItemType
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import io.realm.annotations.Required
 
-open class ItemRealm(
+open class PerkCardRealm(
     @PrimaryKey
-    var cardReferenceNumber: Int? = null,
+    var cardReferenceNumber: Int = 0,
     @Required
-    var itemType: String? = null,
+    var perkValue: String = "",
+    @Required
+    var designatedClass: String = "", // for what character class is the perk
     @Required
     var cardImageUrl: String = ""
-) : RealmObject()
+) : RealmObject() {
+}

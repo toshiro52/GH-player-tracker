@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Player Tracker</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="char_name">Character Name</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="char_class">Character Class</string>
+    <string name="exp_points">Experience Points</string>
+    <string name="change_gold">+/-</string>
+    <string name="gold_count">Gold Count</string>
+    <string name="battle_goals">Completed Battle Goals</string>
+    <string name="retired_chars">Retired Characters</string>
+    <string name="level">Level</string>
 </resources>
