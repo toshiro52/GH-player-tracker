@@ -3,13 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/abillity_card_view.xml" value="0.24094202898550723" />
         <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/activity_main.xml" value="0.22503725782414308" />
         <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/blank_fragment.xml" value="0.27355072463768115" />
         <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/fragment_action_card.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/fragment_attack_deck.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/fragment_item_list.xml" value="0.17552083333333332" />
-        <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/fragment_perk.xml" value="0.259963768115942" />
+        <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/fragment_item_list.xml" value="0.24094202898550723" />
+        <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/fragment_perk.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/fragment_player_stat.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/layout/item_card_view.xml" value="0.2173202614379085" />
         <entry key="..\:/Users/surface/Documents/GH-player-tracker/GH-player-tracker/app/src/main/res/menu/bottom_menu.xml" value="0.31743589743589745" />
       </map>
     </option>

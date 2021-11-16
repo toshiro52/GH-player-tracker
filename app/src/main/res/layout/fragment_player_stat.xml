@@ -131,7 +131,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/retiredCharctersTextField"
+                android:id="@+id/retiredCharactersTextField"
                 android:layout_width="245dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
