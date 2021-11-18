@@ -7,7 +7,7 @@ import io.realm.annotations.PrimaryKey
 import io.realm.annotations.Required
 import org.bson.types.ObjectId
 
-open class RetiredCharacterRealm(
+open class Characters(
     @PrimaryKey
     var id: String = ObjectId().toHexString(),
     @Required
@@ -15,8 +15,8 @@ open class RetiredCharacterRealm(
     var level: Int = 0,
     @Required
     var characterClass: String? = null,
-    var selectedAbilities: RealmSet<AbilityCardRealm>? = RealmSet<AbilityCardRealm>()
+    var selectedAbilities: RealmSet<AbilityCard>? = RealmSet<AbilityCard>(),
+    var isRetired: Boolean = false
     //Chosen perks
-
 ) : RealmObject() {
 }

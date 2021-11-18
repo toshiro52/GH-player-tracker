@@ -4,7 +4,7 @@ import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import io.realm.annotations.Required
 
-open class PerkCardRealm(
+open class PerkCard(
     @PrimaryKey
     var cardReferenceNumber: Int = 0,
     @Required

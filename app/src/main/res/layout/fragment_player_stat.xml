@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PlayerStatFragment">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -13,7 +13,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp">
+            android:paddingRight="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/charNameTextField"
@@ -25,8 +28,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:enabled="false"/>
+                    android:enabled="false"
+                    android:inputType="none" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -41,28 +44,28 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:enabled="false"/>
+                    android:enabled="false"
+                    android:inputType="none" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_constraintTop_toBottomOf="@id/classNameTextField"
-                android:layout_marginTop="16dp">
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/classNameTextField">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/experience"
-                    android:layout_width="200dp"
+                    android:layout_width="126dp"
                     android:layout_height="wrap_content"
                     android:hint="@string/exp_points">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="none"
-                        android:enabled="false" />
+                        android:enabled="false"
+                        android:inputType="none" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,8 +102,8 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="245dp"
                         android:layout_height="wrap_content"
-                        android:inputType="none"
-                        android:enabled="false"/>
+                        android:enabled="false"
+                        android:inputType="none" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,50 +112,53 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="@string/change_gold"
-                    app:layout_constraintStart_toEndOf="@+id/goldCountTextField"/>
+                    android:text="@string/change_value"
+                    app:layout_constraintStart_toEndOf="@+id/goldCountTextField" />
 
             </LinearLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/battleGoalsCountTextField"
-                android:layout_width="245dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="@string/battle_goals"
-                app:layout_constraintTop_toBottomOf="@id/goldCountTextField">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/battleGoalsCountTextField"
+                    android:layout_width="126dp"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:enabled="false"/>
+                    android:layout_marginTop="16dp"
+                    android:hint="@string/battle_goals"
+                    app:layout_constraintTop_toBottomOf="@id/goldCountTextField">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:inputType="none" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/retiredCharactersTextField"
-                android:layout_width="245dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="@string/retired_chars"
-                app:layout_constraintTop_toBottomOf="@id/battleGoalsCountTextField">
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/changeCheckmarksButton"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:enabled="false"
-                    />
+                    android:layout_marginStart="16dp"
+                    android:text="@string/change_value"
+                    app:layout_constraintStart_toEndOf="@+id/battleGoalsCountTextField" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
 
+            <Button
+                android:id="@+id/newCharacterButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Retire Character"/>
 
             <!-- Potential Scroll View for Retired Characters List-->
 
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

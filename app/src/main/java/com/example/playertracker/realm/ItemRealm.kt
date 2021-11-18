@@ -5,7 +5,7 @@ import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import io.realm.annotations.Required
 
-open class ItemRealm(
+open class Item(
     @PrimaryKey
     var cardReferenceNumber: Int? = null,
     @Required

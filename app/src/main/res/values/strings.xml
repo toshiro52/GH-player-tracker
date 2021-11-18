@@ -3,10 +3,11 @@
     <string name="char_name">Character Name</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="char_class">Character Class</string>
-    <string name="exp_points">Experience Points</string>
+    <string name="exp_points">Experience</string>
     <string name="change_gold">+/-</string>
     <string name="gold_count">Gold Count</string>
-    <string name="battle_goals">Completed Battle Goals</string>
+    <string name="battle_goals">Checkmarks</string>
+    <string name="change_checkmarks">+/-</string>
     <string name="retired_chars">Retired Characters</string>
     <string name="level">Level</string>
     <string name="fab_content_desc">Add Item</string>
@@ -14,4 +15,5 @@
     <string name="ability_initiative">Initiative </string>
     <string name="ability_level">Ability Level </string>
     <string name="perk_count">Available perks</string>
+    <string name="change_value">+/-</string>
 </resources>
