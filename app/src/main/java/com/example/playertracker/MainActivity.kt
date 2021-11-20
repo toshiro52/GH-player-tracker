@@ -7,12 +7,23 @@ import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import io.realm.Realm
+import io.realm.RealmConfiguration
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Realm.init(this)
+        val configuration = RealmConfiguration.Builder()
+            .allowQueriesOnUiThread(true)
+            .allowWritesOnUiThread(true)
+            .schemaVersion(0)
+            .name("tempName")
+            .build()
+
 
         val fragmentManager: FragmentManager = supportFragmentManager
 

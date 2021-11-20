@@ -17,6 +17,6 @@ enum class CharacterClasses(val className: String) {
     DOOMSTALKER("Doomstalker"),
     SAWBONES("Sawbones"),
     ELEMENTALIST("Elementalist"),
-    BEAST_TYRANT("Beast Tyrant")
-
+    BEAST_TYRANT("Beast Tyrant"),
+    BLANK("")
 }
