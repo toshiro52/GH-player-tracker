@@ -13,5 +13,4 @@ open class AttackCard(
     var designatedClass: String = "", // for what character class is the perk
     @Required
     var cardImageUrl: String = ""
-) : RealmObject() {
-}
+) : RealmObject() {}

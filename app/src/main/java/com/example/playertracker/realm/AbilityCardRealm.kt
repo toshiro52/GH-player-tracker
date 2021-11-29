@@ -13,6 +13,4 @@ open class AbilityCard(
     var Initiative: Int = 0,
     @Required
     var cardImageURL: String? = null
-) : RealmObject() {
-
-}
+) : RealmObject() {}

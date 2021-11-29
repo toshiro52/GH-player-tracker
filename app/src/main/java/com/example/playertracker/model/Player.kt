@@ -1,6 +1,5 @@
 package com.example.playertracker.model
 
-import com.example.playertracker.CharacterClasses
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
@@ -9,7 +8,7 @@ const val MAX_LEVEL = 9
 
 object Player {
     private var name: String = ""
-    private var characterClass: CharacterClasses = CharacterClasses.BLANK
+    private var characterClass: String = ""
     private var experience: Int = 0
     private var level: Int = 1
     private var gold: Int = 0
@@ -54,7 +53,7 @@ object Player {
     fun resetStats() {
         name = ""
         level = 1
-        characterClass = CharacterClasses.BLANK
+        characterClass = ""
         experience = 0
         gold = 0
         checkmarks = 0
