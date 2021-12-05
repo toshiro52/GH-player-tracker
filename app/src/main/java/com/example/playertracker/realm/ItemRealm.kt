@@ -9,6 +9,8 @@ open class Item(
     @PrimaryKey
     var cardReferenceNumber: Int? = null,
     @Required
+    var cardName: String? = null,
+    @Required
     var itemType: String? = null,
     @Required
     var cardImageUrl: String = "",

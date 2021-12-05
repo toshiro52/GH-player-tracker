@@ -16,4 +16,5 @@
     <string name="ability_level">Ability Level </string>
     <string name="perk_count">Available perks</string>
     <string name="change_value">+/-</string>
+    <string name="add_item_text">Enter item reference number</string>
 </resources>

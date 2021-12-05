@@ -9,6 +9,8 @@ open class AbilityCard(
     var cardReferenceNumber: Int = 0,
     @Required
     var className: String = "",
+    @Required
+    var cardName: String = "",
     var cardLevel: String = "",
     var Initiative: Int = 0,
     @Required

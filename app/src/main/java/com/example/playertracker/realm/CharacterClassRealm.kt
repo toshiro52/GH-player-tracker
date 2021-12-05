@@ -4,7 +4,7 @@ import io.realm.RealmList
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
-class CharacterClass: RealmObject() {
+open class CharacterClass: RealmObject() {
     @PrimaryKey
     var className: String = ""
     var healthPerLevel: RealmList<Int> = RealmList()
