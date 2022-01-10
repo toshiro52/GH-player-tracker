@@ -17,4 +17,10 @@
     <string name="perk_count">Available perks</string>
     <string name="change_value">+/-</string>
     <string name="add_item_text">Enter item reference number</string>
+    <string name="change_gold_text">Enter Gold Value</string>
+    <string name="change_experience_text">Enter Experience Points</string>
+    <string name="cancel_dialog">Cancel</string>
+    <string name="confirm_dialog">Confirm</string>
+    <string name="enter_char_name">Character Name</string>
+    <string name="enter_char_level">Character Starting Level</string>
 </resources>

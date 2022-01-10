@@ -56,10 +56,10 @@
                 app:layout_constraintTop_toBottomOf="@id/classNameTextField">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/experience"
-                    android:layout_width="126dp"
+                    android:id="@+id/level"
+                    android:layout_width="75dp"
                     android:layout_height="wrap_content"
-                    android:hint="@string/exp_points">
+                    android:hint="@string/level">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -70,12 +70,12 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/level"
-                    android:layout_width="75dp"
+                    android:id="@+id/experience"
+                    android:layout_width="126dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:hint="@string/level"
-                    app:layout_constraintStart_toEndOf="@+id/experience">
+                    android:hint="@string/exp_points"
+                    app:layout_constraintStart_toEndOf="@+id/level">>
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -84,6 +84,15 @@
                         android:inputType="none" />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/changeExperience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_gravity="center"
+                    android:text="@string/change_value"
+                    app:layout_constraintStart_toEndOf="@+id/experience"/>
 
             </LinearLayout>
 

@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.playertracker.databinding.FragmentPlayerStatBinding
+import com.example.playertracker.ui.ChangeExperienceDialogFragment
+import com.example.playertracker.ui.ChangeGoldDialogFragment
 import com.example.playertracker.viewModel.PlayerStatViewModel
 
 class PlayerStatFragment : Fragment() {
@@ -26,11 +28,41 @@ class PlayerStatFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //
+
+        setUpButtons()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setUpButtons() {
+        binding.changeExperience.setOnClickListener {
+            changeExperience()
+        }
+        binding.changeGoldButton.setOnClickListener {
+            changeGold()
+        }
+        binding.changeCheckmarksButton.setOnClickListener {
+            changeCheckMarks()
+        }
+        binding.newCharacterButton.setOnClickListener {
+
+        }
+    }
+
+    private fun changeExperience() {
+        val dialog = ChangeExperienceDialogFragment()
+        dialog.show(childFragmentManager, "Experience Gold Dialog")
+    }
+
+    private fun changeGold() {
+        var dialog = ChangeGoldDialogFragment()
+        dialog.show(childFragmentManager, "Change Gold Dialog")
+    }
+
+    private fun changeCheckMarks() {
+
     }
 }

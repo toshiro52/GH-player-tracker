@@ -7,13 +7,13 @@ const val MAX_CHECKMARK_COUNT = 18
 const val MAX_LEVEL = 9
 
 object Player {
-    private var name: String = ""
-    private var characterClass: String = ""
-    private var experience: Int = 0
-    private var level: Int = 1
-    private var gold: Int = 0
-    private var checkmarks = 0
-    private var perkCount = 0
+    private var name: String = "" //Realm
+    private var characterClass: String = "" //Realm
+    private var experience: Int = 0 //sharedPref
+    private var level: Int = 1 //Realm
+    private var gold: Int = 0 //sharedPref
+    private var checkmarks = 0 //sharedPref
+    private var perkCount = 0 //sharedPref
 
     //var selectedAbilities: Set<AbilityCard> = setOf()// Jak bardzo potrzebne skoro w bazie jest to trzymane
 
