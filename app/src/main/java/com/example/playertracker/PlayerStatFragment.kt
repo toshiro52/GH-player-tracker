@@ -48,7 +48,7 @@ class PlayerStatFragment : Fragment() {
             changeCheckMarks()
         }
         binding.newCharacterButton.setOnClickListener {
-
+            createNewCharacter()
         }
     }
 
@@ -58,11 +58,16 @@ class PlayerStatFragment : Fragment() {
     }
 
     private fun changeGold() {
-        var dialog = ChangeGoldDialogFragment()
+        val dialog = ChangeGoldDialogFragment()
         dialog.show(childFragmentManager, "Change Gold Dialog")
     }
 
     private fun changeCheckMarks() {
 
+    }
+
+    private fun createNewCharacter() {
+        val dialog = CreateCharacterFragment()
+        dialog.show(childFragmentManager, "Create Character")
     }
 }

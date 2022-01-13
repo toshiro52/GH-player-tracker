@@ -1,27 +1,26 @@
-package com.example.playertracker
+package com.example.playertracker.ui
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
+import com.example.playertracker.R
 import com.example.playertracker.viewModel.AddItemViewModel
 import com.google.android.material.textfield.TextInputEditText
 
 class AddItemDialogFragment: DialogFragment() {
 
-    private val sharedViewModel: AddItemViewModel by activityViewModels()
+    private val viewModel: AddItemViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceBundle: Bundle?
     ): View? {
-        var rootView: View = inflater.inflate(R.layout.add_item_dialog, container, false)
+        val rootView: View = inflater.inflate(R.layout.add_item_dialog, container, false)
 
         setUpButtons(rootView)
 
@@ -35,8 +34,8 @@ class AddItemDialogFragment: DialogFragment() {
 
         addButton.setOnClickListener {
             val input = textField.text.toString()
-            if(sharedViewModel.validateInput(input)) {
-                sharedViewModel.addItem(input.toInt())
+            if(viewModel.validateInput(input)) {
+                viewModel.addItem(input.toInt())
             }
             dismiss()
         }

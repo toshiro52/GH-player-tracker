@@ -7,15 +7,27 @@ const val MAX_CHECKMARK_COUNT = 18
 const val MAX_LEVEL = 9
 
 object Player {
-    private var name: String = "" //Realm
-    private var characterClass: String = "" //Realm
+    private var name: String = "" //sharedPref
+    private var characterClass: String = "" //sharedPref
     private var experience: Int = 0 //sharedPref
-    private var level: Int = 1 //Realm
+    private var level: Int = 1 //sharedPref
     private var gold: Int = 0 //sharedPref
     private var checkmarks = 0 //sharedPref
     private var perkCount = 0 //sharedPref
 
     //var selectedAbilities: Set<AbilityCard> = setOf()// Jak bardzo potrzebne skoro w bazie jest to trzymane
+
+    fun setName(newName: String) {
+        name = newName
+    }
+
+    fun setCharacterClass(newCharacterClass: String) {
+        characterClass = newCharacterClass
+    }
+
+    fun setLevel(newLevel: Int) {
+        level = newLevel
+    }
 
     fun changeExperience(expGained: Int) {
         experience += expGained

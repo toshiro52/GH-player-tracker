@@ -23,4 +23,16 @@
     <string name="confirm_dialog">Confirm</string>
     <string name="enter_char_name">Character Name</string>
     <string name="enter_char_level">Character Starting Level</string>
+    <string name="choose_character_class">Character Class</string>
+    <string name="starting_gold">Starting gold</string>
+    
+    
+    <string-array name="character_classes">
+        <item>Brute</item>
+        <item>Cragheart</item>
+        <item>Mindthief</item>
+        <item>Scoundrel</item>
+        <item>Spellweaver</item>
+        <item>Tinkerer</item>
+    </string-array>
 </resources>
