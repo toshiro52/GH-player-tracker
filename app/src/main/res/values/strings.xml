@@ -25,7 +25,9 @@
     <string name="enter_char_level">Character Starting Level</string>
     <string name="choose_character_class">Character Class</string>
     <string name="starting_gold">Starting gold</string>
-    
+    <string name="plus_sign">+</string>
+    <string name="minus_sign">-</string>
+    <string name="cards_in_deck">Cards in Deck</string>
     
     <string-array name="character_classes">
         <item>Brute</item>

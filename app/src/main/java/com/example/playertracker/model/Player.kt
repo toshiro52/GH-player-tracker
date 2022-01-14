@@ -29,6 +29,10 @@ object Player {
         level = newLevel
     }
 
+    fun setGold(newGold: Int) {
+        gold = newGold
+    }
+
     fun changeExperience(expGained: Int) {
         experience += expGained
         updateLevel()

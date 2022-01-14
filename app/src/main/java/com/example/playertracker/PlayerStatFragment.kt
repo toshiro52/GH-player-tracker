@@ -44,7 +44,7 @@ class PlayerStatFragment : Fragment() {
         binding.changeGoldButton.setOnClickListener {
             changeGold()
         }
-        binding.changeCheckmarksButton.setOnClickListener {
+        binding.addCheckmarksButton.setOnClickListener {
             changeCheckMarks()
         }
         binding.newCharacterButton.setOnClickListener {
@@ -63,7 +63,7 @@ class PlayerStatFragment : Fragment() {
     }
 
     private fun changeCheckMarks() {
-
+        viewModel.changeCheckmark()
     }
 
     private fun createNewCharacter() {

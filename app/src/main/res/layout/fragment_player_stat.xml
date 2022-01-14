@@ -147,11 +147,19 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/changeCheckmarksButton"
+                    android:id="@+id/addCheckmarksButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="@string/change_value"
+                    android:text="@string/plus_sign"
+                    app:layout_constraintStart_toEndOf="@+id/battleGoalsCountTextField" />
+
+                <Button
+                    android:id="@+id/removeCheckmarksButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/minus_sign"
                     app:layout_constraintStart_toEndOf="@+id/battleGoalsCountTextField" />
 
             </LinearLayout>

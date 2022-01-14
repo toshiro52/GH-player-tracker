@@ -14,6 +14,7 @@ class CreateCharacterViewModel : ViewModel() {
         Player.setName(characterName)
         Player.setCharacterClass(characterClass)
         Player.setLevel(level)
+        Player.setGold(calculateStartingGold(level))
         //Player.setUpPerks()
         //Player.loadAbilityCards()
 
