@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.playertracker.databinding.FragmentPlayerStatBinding
+import com.example.playertracker.model.SharedPref
 import com.example.playertracker.ui.ChangeExperienceDialogFragment
 import com.example.playertracker.ui.ChangeGoldDialogFragment
 import com.example.playertracker.viewModel.PlayerStatViewModel
@@ -29,6 +30,7 @@ class PlayerStatFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setUpText()
         setUpButtons()
     }
 
@@ -69,5 +71,9 @@ class PlayerStatFragment : Fragment() {
     private fun createNewCharacter() {
         val dialog = CreateCharacterFragment()
         dialog.show(childFragmentManager, "Create Character")
+    }
+
+    private fun setUpText() {
+        val sharedPreferences = SharedPref(requireContext())
     }
 }

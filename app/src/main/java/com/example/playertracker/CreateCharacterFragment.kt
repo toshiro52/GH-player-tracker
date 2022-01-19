@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
@@ -59,7 +60,15 @@ class CreateCharacterFragment : DialogFragment() {
                 R.id.action_save -> {
                     if(viewModel.validateLevelInput(binding.startingLevel.text.toString())
                                 && viewModel.validateNameInput(binding.nameInputEditText.text.toString())){
-                        //viewModel.createCharacter()
+
+                        lateinit var selectedClass: String
+                        binding.autoCompleteTextView.onItemClickListener = AdapterView.OnItemClickListener{
+                                parent,view,position,id->
+                            selectedClass = parent.getItemAtPosition(position).toString()
+                            // Display the clicked item using toast
+                            Toast.makeText(context,"Selected : $selectedClass",Toast.LENGTH_SHORT).show()
+                        }
+                        viewModel.saveCharacter(binding.nameInputEditText.text.toString(), selectedClass ,binding.startingLevel.text.toString().toInt())
                         dismiss()
                         Toast.makeText(context, "Successfully Created Character", Toast.LENGTH_SHORT).show()
                     }

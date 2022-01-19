@@ -2,6 +2,7 @@ package com.example.playertracker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
@@ -20,10 +21,11 @@ class MainActivity : AppCompatActivity() {
         val configuration = RealmConfiguration.Builder()
             .allowQueriesOnUiThread(true)
             .allowWritesOnUiThread(true)
-            .schemaVersion(0)
-            .name("tempName")
+            .name("database.realm")
             .build()
-
+        Realm.setDefaultConfiguration(configuration)
+        val realm = Realm.getDefaultInstance()
+        Log.d("TAG", "path: " + realm.path)
 
         val fragmentManager: FragmentManager = supportFragmentManager
 

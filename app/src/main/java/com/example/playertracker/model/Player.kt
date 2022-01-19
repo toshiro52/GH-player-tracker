@@ -14,6 +14,7 @@ object Player {
     private var gold: Int = 0 //sharedPref
     private var checkmarks = 0 //sharedPref
     private var perkCount = 0 //sharedPref
+    private lateinit var state: CharacterState
 
     //var selectedAbilities: Set<AbilityCard> = setOf()// Jak bardzo potrzebne skoro w bazie jest to trzymane
 
@@ -74,5 +75,9 @@ object Player {
         gold = 0
         checkmarks = 0
         perkCount = 0
+    }
+
+    fun saveName(input: String) {
+
     }
 }
