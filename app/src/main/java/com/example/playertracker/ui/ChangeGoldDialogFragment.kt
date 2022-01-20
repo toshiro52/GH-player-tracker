@@ -6,12 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.activityViewModels
 import com.example.playertracker.R
 import com.example.playertracker.model.Player
+import com.example.playertracker.viewModel.PlayerStatViewModel
 import com.google.android.material.textfield.TextInputEditText
 
 class ChangeGoldDialogFragment: DialogFragment()  {
 
+    private val sharedViewModel: PlayerStatViewModel by activityViewModels()
     private var valueChangeType: Boolean = true
 
     override fun onCreateView(
@@ -35,7 +38,7 @@ class ChangeGoldDialogFragment: DialogFragment()  {
         addButton.setOnClickListener {
             val input = textField.text?.toString()
             if(!input.isNullOrEmpty())
-                Player.updateGold(input.toInt() * valueModifier())
+                sharedViewModel.updateGold(input.toInt() * valueModifier())
             //TODO: else Toast()
             dismiss()
         }

@@ -19,13 +19,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/charNameTextField"
+
                 android:layout_width="245dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/char_name">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/charNameTextField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:enabled="false"
@@ -34,7 +35,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/classNameTextField"
                 android:layout_width="245dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -42,6 +42,7 @@
                 app:layout_constraintTop_toBottomOf="@id/charNameTextField">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/classNameTextField"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:enabled="false"
@@ -56,12 +57,12 @@
                 app:layout_constraintTop_toBottomOf="@id/classNameTextField">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/level"
                     android:layout_width="75dp"
                     android:layout_height="wrap_content"
                     android:hint="@string/level">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/levelTextField"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
@@ -70,7 +71,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/experience"
+
                     android:layout_width="126dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -78,6 +79,7 @@
                     app:layout_constraintStart_toEndOf="@+id/level">>
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/experience"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
@@ -101,7 +103,6 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/goldCountTextField"
                     android:layout_width="126dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -109,6 +110,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/experience">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/goldCountTextField"
                         android:layout_width="245dp"
                         android:layout_height="wrap_content"
                         android:enabled="false"
@@ -131,7 +133,6 @@
                 android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/battleGoalsCountTextField"
                     android:layout_width="126dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -139,6 +140,7 @@
                     app:layout_constraintTop_toBottomOf="@id/goldCountTextField">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/checkmarksTextField"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:enabled="false"
@@ -152,14 +154,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="@string/plus_sign"
-                    app:layout_constraintStart_toEndOf="@+id/battleGoalsCountTextField" />
-
-                <Button
-                    android:id="@+id/removeCheckmarksButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="@string/minus_sign"
                     app:layout_constraintStart_toEndOf="@+id/battleGoalsCountTextField" />
 
             </LinearLayout>

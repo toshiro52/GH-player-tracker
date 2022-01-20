@@ -7,14 +7,16 @@ const val MAX_CHECKMARK_COUNT = 18
 const val MAX_LEVEL = 9
 
 object Player {
-    private var name: String = "" //sharedPref
-    private var characterClass: String = "" //sharedPref
-    private var experience: Int = 0 //sharedPref
-    private var level: Int = 1 //sharedPref
-    private var gold: Int = 0 //sharedPref
-    private var checkmarks = 0 //sharedPref
-    private var perkCount = 0 //sharedPref
-    private lateinit var state: CharacterState
+
+    private var name: String? = SharedPref.getName()
+    private var characterClass: String? = SharedPref.getClass()
+    private var experience: Int = SharedPref.getExperience()
+    private var level: Int = SharedPref.getLevel()
+    private var gold: Int = SharedPref.getGold()
+    private var checkmarks = SharedPref.getCheckmarks()
+    private var perkCount = SharedPref.getPerks()
+    private var retiredCharacters = SharedPref.getRetiredChars()
+    //private lateinit var state: CharacterState
 
     //var selectedAbilities: Set<AbilityCard> = setOf()// Jak bardzo potrzebne skoro w bazie jest to trzymane
 
@@ -30,19 +32,34 @@ object Player {
         level = newLevel
     }
 
+    fun setExperience(newExperience: Int) {
+        experience = newExperience
+    }
+
     fun setGold(newGold: Int) {
         gold = newGold
     }
 
-    fun changeExperience(expGained: Int) {
+    fun setCheckmarks(newCheckmarks: Int) {
+        checkmarks = newCheckmarks
+    }
+
+    fun setPerks(newPerks: Int) {
+        perkCount = newPerks
+    }
+
+    fun gainExperience(expGained: Int) {
         experience += expGained
+        SharedPref.saveExperience(experience)
         updateLevel()
     }
 
     fun updateLevel() {
         level = ((-15 + sqrt(289 + (1.6) * experience))/2).roundToInt()
-        if(level > MAX_LEVEL)
+        if(level > MAX_LEVEL){
             level = MAX_LEVEL
+            SharedPref.saveLevel(level)
+        }
     }
 
     fun updateGold(goldChange: Int) {
@@ -50,16 +67,37 @@ object Player {
             gold = 0
         else
             gold += goldChange
+        SharedPref.saveGold(gold)
     }
+
+    fun getName() = name
+
+    fun getClass() = characterClass
+
+    fun getGold() = gold
+
+    fun getLevel() = level
+
+    fun getExp() = experience
+
+    fun getCheckmarks() = checkmarks
+
+    fun getPerks() = perkCount
+
+    fun getRetiredChars() = retiredCharacters
 
     fun gainCheckmarks() {
         checkmarks++
-        updatePerkCount()
+        SharedPref.saveCheckmarks(getCheckmarks())
+        gainPerk()
     }
 
-    fun updatePerkCount() {
-        if(checkmarks % 3 == 0 && checkmarks <= MAX_CHECKMARK_COUNT)
+
+    fun gainPerk() {
+        if(getCheckmarks() % 3 == 0 && getCheckmarks() <= MAX_CHECKMARK_COUNT){
             perkCount++
+            SharedPref.savePerks(getPerks())
+        }
     }
 
     fun resetCharacter() {
@@ -75,9 +113,7 @@ object Player {
         gold = 0
         checkmarks = 0
         perkCount = 0
+        SharedPref.clearPrefs()
     }
 
-    fun saveName(input: String) {
-
-    }
 }

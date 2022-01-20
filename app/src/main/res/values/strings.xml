@@ -28,6 +28,7 @@
     <string name="plus_sign">+</string>
     <string name="minus_sign">-</string>
     <string name="cards_in_deck">Cards in Deck</string>
+    <string name="experience_text">%d</string>
     
     <string-array name="character_classes">
         <item>Brute</item>

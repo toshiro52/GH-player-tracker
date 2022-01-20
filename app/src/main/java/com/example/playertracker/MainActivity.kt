@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.playertracker.model.SharedPref
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         Realm.setDefaultConfiguration(configuration)
         val realm = Realm.getDefaultInstance()
         Log.d("TAG", "path: " + realm.path)
+
+        SharedPref.init(this)
 
         val fragmentManager: FragmentManager = supportFragmentManager
 

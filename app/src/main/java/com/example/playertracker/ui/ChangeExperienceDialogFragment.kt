@@ -6,11 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.activityViewModels
 import com.example.playertracker.R
 import com.example.playertracker.model.Player
+import com.example.playertracker.viewModel.PlayerStatViewModel
 import com.google.android.material.textfield.TextInputEditText
 
 class ChangeExperienceDialogFragment: DialogFragment() {
+
+    private val sharedViewModel: PlayerStatViewModel by activityViewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,7 +36,7 @@ class ChangeExperienceDialogFragment: DialogFragment() {
         addButton.setOnClickListener {
             val input = textField.text?.toString()
             if(!input.isNullOrEmpty())
-                Player.changeExperience(input.toInt())
+                sharedViewModel.gainExperience(input.toInt())
             //TODO: else Toast()
             dismiss()
         }

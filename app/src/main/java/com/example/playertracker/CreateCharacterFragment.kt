@@ -2,6 +2,7 @@ package com.example.playertracker
 
 import android.app.Dialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -61,13 +62,8 @@ class CreateCharacterFragment : DialogFragment() {
                     if(viewModel.validateLevelInput(binding.startingLevel.text.toString())
                                 && viewModel.validateNameInput(binding.nameInputEditText.text.toString())){
 
-                        lateinit var selectedClass: String
-                        binding.autoCompleteTextView.onItemClickListener = AdapterView.OnItemClickListener{
-                                parent,view,position,id->
-                            selectedClass = parent.getItemAtPosition(position).toString()
-                            // Display the clicked item using toast
-                            Toast.makeText(context,"Selected : $selectedClass",Toast.LENGTH_SHORT).show()
-                        }
+                        val selectedClass = binding.autoCompleteTextView.text.toString()
+                        Log.d("TAG", "selected $selectedClass")
                         viewModel.saveCharacter(binding.nameInputEditText.text.toString(), selectedClass ,binding.startingLevel.text.toString().toInt())
                         dismiss()
                         Toast.makeText(context, "Successfully Created Character", Toast.LENGTH_SHORT).show()

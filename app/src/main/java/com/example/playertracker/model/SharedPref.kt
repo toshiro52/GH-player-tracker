@@ -3,8 +3,12 @@ package com.example.playertracker.model
 import android.content.Context
 import android.content.SharedPreferences
 
-class SharedPref(val context: Context) {
-    private val sharedPreferences: SharedPreferences = context.getSharedPreferences("playerData", Context.MODE_PRIVATE)
+object SharedPref{
+    private lateinit var sharedPreferences: SharedPreferences
+
+    fun init(context: Context){
+        sharedPreferences = context.getSharedPreferences("playerData", Context.MODE_PRIVATE)
+    }
 
     fun clearPrefs() {
         val editor = sharedPreferences.edit()
@@ -54,9 +58,15 @@ class SharedPref(val context: Context) {
         editor.commit()
     }
 
-    fun getName() = sharedPreferences.getString("name", null)
+    fun saveRetiredChars(input: Int) {
+        val editor = sharedPreferences.edit()
+        editor.putInt("retiredChars", input)
+        editor.commit()
+    }
 
-    fun getClass() = sharedPreferences.getString("class", null)
+    fun getName() = sharedPreferences.getString("name", "")
+
+    fun getClass() = sharedPreferences.getString("class", "")
 
     fun getLevel() = sharedPreferences.getInt("level", 1)
 
@@ -67,5 +77,7 @@ class SharedPref(val context: Context) {
     fun getGold() = sharedPreferences.getInt("gold", 0)
 
     fun getPerks() = sharedPreferences.getInt("perks", 0)
+
+    fun getRetiredChars() = sharedPreferences.getInt("retiredChars", 0)
 
 }
