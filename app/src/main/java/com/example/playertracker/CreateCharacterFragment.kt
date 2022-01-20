@@ -13,6 +13,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.example.playertracker.databinding.FragmentCreateCharacterBinding
 import com.example.playertracker.viewModel.CreateCharacterViewModel
+import com.example.playertracker.viewModel.PlayerStatViewModel
 
 
 class CreateCharacterFragment : DialogFragment() {
@@ -20,7 +21,7 @@ class CreateCharacterFragment : DialogFragment() {
     private var _binding: FragmentCreateCharacterBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: CreateCharacterViewModel by activityViewModels()
+    private val viewModel: PlayerStatViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
