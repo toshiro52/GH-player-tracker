@@ -8,8 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.playertracker.realm.Item
 import com.squareup.picasso.Picasso
+import io.realm.OrderedRealmCollection
+import io.realm.RealmRecyclerViewAdapter
 
-class ItemCardAdapter(private val ownedItems: List<Item>) : RecyclerView.Adapter<ItemCardAdapter.ItemCardViewHolder>() {
+class ItemCardAdapter(ownedItems: OrderedRealmCollection<Item?>?) : RealmRecyclerViewAdapter<Item?, ItemCardAdapter.ItemCardViewHolder?>(ownedItems, true) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -20,14 +22,10 @@ class ItemCardAdapter(private val ownedItems: List<Item>) : RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: ItemCardAdapter.ItemCardViewHolder, position: Int) {
-        val item = ownedItems[position]
-        holder.itemName.text = item.cardName
+        val item = getItem(position)
+        holder.itemName.text = item?.cardName
         //holder.itemDesc.text = item.cardDesc
-        Picasso.get().load(item.cardImageUrl).into(holder.itemImage)
-    }
-
-    override fun getItemCount(): Int {
-        return ownedItems.size
+        //Picasso.get().load(item.cardImageUrl).into(holder.itemImage)
     }
 
     class ItemCardViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {

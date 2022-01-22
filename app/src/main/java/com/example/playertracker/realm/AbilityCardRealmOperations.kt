@@ -8,7 +8,7 @@ class AbilityCardRealmOperations(private val config: RealmConfiguration) {
     val realm = Realm.getInstance(config)
     val query = realm.where(AbilityCard::class.java)
 
-    suspend fun getAvailableActionCards(level: Int): MutableLiveData<List<AbilityCard>> {
+    fun getAvailableActionCards(level: Int): MutableLiveData<List<AbilityCard>> { //Level AND Class
         val res = MutableLiveData<List<AbilityCard>>()
         val queryRes = query.lessThanOrEqualTo("cardLevel", level).findAll()
         res.value = queryRes?.subList(0,queryRes.size)

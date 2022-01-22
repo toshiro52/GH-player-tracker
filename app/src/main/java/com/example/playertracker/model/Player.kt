@@ -56,10 +56,9 @@ object Player {
 
     fun updateLevel() {
         level = ((-15 + sqrt(289 + (1.6) * experience))/2).roundToInt()
-        if(level > MAX_LEVEL){
+        if(level > MAX_LEVEL)
             level = MAX_LEVEL
-            SharedPref.saveLevel(level)
-        }
+        SharedPref.saveLevel(level)
     }
 
     fun updateGold(goldChange: Int) {

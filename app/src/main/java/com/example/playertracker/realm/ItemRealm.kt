@@ -11,8 +11,6 @@ open class Item(
     @Required
     var cardName: String? = null,
     @Required
-    var itemType: String? = null,
-    @Required
     var cardImageUrl: String = "",
     var isOwned: Boolean = false
 ) : RealmObject()

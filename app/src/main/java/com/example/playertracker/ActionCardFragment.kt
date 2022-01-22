@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.playertracker.databinding.FragmentActionCardBinding
 import com.example.playertracker.viewModel.ActionCardViewModel
@@ -30,7 +31,12 @@ class ActionCardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //Ustawic listenery i updaty ui
+
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(activity)
+            //adapter = AbilityCardAdapter()
+        }
+
     }
 
 

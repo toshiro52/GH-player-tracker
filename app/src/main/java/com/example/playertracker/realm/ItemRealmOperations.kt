@@ -1,33 +1,27 @@
 package com.example.playertracker.realm
 
-import androidx.lifecycle.MutableLiveData
+import android.util.Log
 import io.realm.Realm
 import io.realm.RealmConfiguration
+import io.realm.RealmResults
 
 class ItemRealmOperations(private val config: RealmConfiguration) {
-    val realm = Realm.getInstance(config)
-    val query = realm.where(Item::class.java)
+    private val realm = Realm.getInstance(config)
 
-    suspend fun getOwnedItems(): MutableLiveData<List<Item>> {
-        val res = MutableLiveData<List<Item>>()
-        val queryRes = query.equalTo("isOwned", true).findAll()
-        res.value = queryRes?.subList(0, queryRes.size)
-        return res
-    }
+    fun getOwnedItems(): RealmResults<Item> = realm.where(Item::class.java).equalTo("isOwned", true).findAll()
 
-    suspend fun changeToOwnedItem(cardReferenceNumber: Int) { //Update Item field "isOwned" to true
-        val target = query.equalTo("cardReferenceNumber", cardReferenceNumber).findFirst()
+    fun changeToOwnedItem(itemId: Int) { //Update Item field "isOwned" to true
 
-        realm.executeTransaction() {
+        realm.executeTransaction() { r ->
+            val target = r.where(Item::class.java).equalTo("cardReferenceNumber", itemId).findFirst()
             target?.isOwned = true
             realm.insertOrUpdate(target)
         }
     }
 
-    suspend fun changeFromOwnedItem(cardReferenceNumber: Int) {
-        val target = query.equalTo("cardReferenceNumber", cardReferenceNumber).findFirst()
-
-        realm.executeTransaction() {
+    fun changeFromOwnedItem(itemId: Int) {
+        realm.executeTransaction() { r ->
+            val target = r.where(Item::class.java).equalTo("cardReferenceNumber", itemId).findFirst()
             target?.isOwned = false
             realm.insertOrUpdate(target)
         }

@@ -5,15 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.playertracker.databinding.FragmentItemListBinding
+import com.example.playertracker.realm.RealmDatabaseFacade
 import com.example.playertracker.ui.AddItemDialogFragment
+import com.example.playertracker.viewModel.ItemListViewModel
 
 class ItemListFragment : Fragment() {
     private var _binding: FragmentItemListBinding? = null
     private val binding get() = _binding!!
 
-    //private val sharedViewModel: AddItemViewModel by activityViewModels()
+    private val viewModel: ItemListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +32,7 @@ class ItemListFragment : Fragment() {
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            adapter = ItemCardAdapter(emptyList()/* realmFacade.getOwnedItems()    */)
+            adapter = ItemCardAdapter(RealmDatabaseFacade.getOwnedItems())
 
         }
 

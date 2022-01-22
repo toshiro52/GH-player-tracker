@@ -8,8 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.playertracker.realm.AbilityCard
 import com.squareup.picasso.Picasso
+import io.realm.OrderedRealmCollection
+import io.realm.RealmRecyclerViewAdapter
 
-class AbilityCardAdapter(private val availableAbilityCads: List<AbilityCard>) : RecyclerView.Adapter<AbilityCardAdapter.AbilityCardViewHolder>() {
+class AbilityCardAdapter(availableAbilityCards: OrderedRealmCollection<AbilityCard?>?) : RealmRecyclerViewAdapter<AbilityCard?, AbilityCardAdapter.AbilityCardViewHolder>(availableAbilityCards, true) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -20,15 +22,11 @@ class AbilityCardAdapter(private val availableAbilityCads: List<AbilityCard>) : 
     }
 
     override fun onBindViewHolder(holder: AbilityCardViewHolder, position: Int) {
-        val ability = availableAbilityCads[position]
-        holder.abilityCardName.text = ability.cardName
-        holder.initiativeValue.text = ability.Initiative.toString()
-        holder.cardLevel.text = ability.cardLevel
-        Picasso.get().load(ability.cardImageURL).into(holder.abilityCardImage)
-    }
-
-    override fun getItemCount(): Int {
-        return availableAbilityCads.size
+        val ability = getItem(position)
+        holder.abilityCardName.text = ability?.cardName
+        holder.initiativeValue.text = ability?.Initiative.toString()
+        holder.cardLevel.text = ability?.cardLevel
+        Picasso.get().load(ability?.cardImageURL).into(holder.abilityCardImage)
     }
 
     class AbilityCardViewHolder(private val view: View) : RecyclerView.ViewHolder(view){

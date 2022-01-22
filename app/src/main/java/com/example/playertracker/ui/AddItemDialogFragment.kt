@@ -8,12 +8,12 @@ import android.widget.Button
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.example.playertracker.R
-import com.example.playertracker.viewModel.AddItemViewModel
+import com.example.playertracker.viewModel.ItemListViewModel
 import com.google.android.material.textfield.TextInputEditText
 
 class AddItemDialogFragment: DialogFragment() {
 
-    private val viewModel: AddItemViewModel by activityViewModels()
+    private val viewModel: ItemListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

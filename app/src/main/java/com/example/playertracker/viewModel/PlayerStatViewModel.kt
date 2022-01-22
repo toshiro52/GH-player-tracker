@@ -4,8 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.playertracker.model.MAX_CHECKMARK_COUNT
+import com.example.playertracker.model.MAX_LEVEL
 import com.example.playertracker.model.Player
 import com.example.playertracker.model.SharedPref
+import kotlin.math.roundToInt
+import kotlin.math.sqrt
 
 class PlayerStatViewModel: ViewModel() {
 
@@ -46,6 +49,7 @@ class PlayerStatViewModel: ViewModel() {
     fun gainExperience(input: Int) {
         _experience.value = (_experience.value)?.plus(input)
         Player.gainExperience(input)
+        _level.value = Player.getLevel()
     }
 
     fun getName() = Player.getName()

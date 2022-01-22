@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.playertracker.model.SharedPref
+import com.example.playertracker.realm.RealmDatabaseFacade
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -22,13 +23,17 @@ class MainActivity : AppCompatActivity() {
         val configuration = RealmConfiguration.Builder()
             .allowQueriesOnUiThread(true)
             .allowWritesOnUiThread(true)
-            .name("database.realm")
+            .assetFile("database.realm")
             .build()
         Realm.setDefaultConfiguration(configuration)
-        val realm = Realm.getDefaultInstance()
-        Log.d("TAG", "path: " + realm.path)
+
+        //val realm = Realm.getDefaultInstance()
+        //Log.d("TAG", "path: " + realm.path)
 
         SharedPref.init(this)
+        RealmDatabaseFacade.init(configuration)
+
+
 
         val fragmentManager: FragmentManager = supportFragmentManager
 
