@@ -26,7 +26,7 @@ class AbilityCardAdapter(availableAbilityCards: OrderedRealmCollection<AbilityCa
         holder.abilityCardName.text = ability?.cardName
         holder.initiativeValue.text = ability?.Initiative.toString()
         holder.cardLevel.text = ability?.cardLevel
-        Picasso.get().load(ability?.cardImageURL).into(holder.abilityCardImage)
+        //Picasso.get().load(ability?.cardImageURL).into(holder.abilityCardImage)
     }
 
     class AbilityCardViewHolder(private val view: View) : RecyclerView.ViewHolder(view){

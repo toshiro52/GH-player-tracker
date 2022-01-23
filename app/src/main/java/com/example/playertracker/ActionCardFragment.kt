@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.playertracker.databinding.FragmentActionCardBinding
+import com.example.playertracker.realm.RealmDatabaseFacade
 import com.example.playertracker.viewModel.ActionCardViewModel
 
 class ActionCardFragment : Fragment() {
@@ -34,11 +35,10 @@ class ActionCardFragment : Fragment() {
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            //adapter = AbilityCardAdapter()
+            adapter = AbilityCardAdapter(RealmDatabaseFacade.getAvailableAbilitiCards())
         }
 
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
