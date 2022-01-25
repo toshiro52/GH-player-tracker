@@ -1,18 +1,15 @@
 package com.example.playertracker
 
-import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.example.playertracker.databinding.FragmentCreateCharacterBinding
-import com.example.playertracker.viewModel.CreateCharacterViewModel
 import com.example.playertracker.viewModel.PlayerStatViewModel
 
 

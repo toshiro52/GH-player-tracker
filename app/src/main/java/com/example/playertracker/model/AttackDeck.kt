@@ -1,6 +1,7 @@
 package com.example.playertracker.model
 
 import com.example.playertracker.realm.AttackCard
+import com.example.playertracker.realm.RealmDatabaseFacade
 
 object AttackDeck {
     val attackModifierDeck: MutableList<AttackCard> = mutableListOf()
@@ -10,11 +11,21 @@ object AttackDeck {
     }
 
     fun setUpBasicAttackDeck() {
-        //z Realma wez wszystkie karty gdzie designatedClass == "basic"
+        addAttackCard("+0", 6, "Basic")
+        addAttackCard("+1", 5, "Basic")
+        addAttackCard("+2", 1, "Basic")
+        addAttackCard("-1", 5, "Basic")
+        addAttackCard("-2", 1, "Basic")
+        addAttackCard("MISS", 1, "Basic")
+        addAttackCard("2x", 1, "Basic")
+        shuffleDeck()
     }
 
-    fun addAttackCard(card: AttackCard) {
-        attackModifierDeck.add(card)
+    fun addAttackCard(cardValue: String, occurrences: Int, characterClass: String) {
+        val card = RealmDatabaseFacade.getAttackCard(cardValue, characterClass)
+        for(i in 1..occurrences) {
+            attackModifierDeck.add(card)
+        }
     }
 
     fun removeAttackCard(card: AttackCard) {
@@ -34,6 +45,10 @@ class AttackDeckIterator(private val collection: AttackDeck) {
 
     fun hasNext(): Boolean {
         return index < collection.attackModifierDeck.size
+    }
+
+    fun reset() {
+        index = 0
     }
 
 }

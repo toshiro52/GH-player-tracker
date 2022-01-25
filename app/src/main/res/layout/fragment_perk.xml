@@ -28,96 +28,15 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ScrollView
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/perkCountTextField">
+            android:scrollbars="vertical"
+            tools:listitem="@layout/perk_card_view"
+            app:layoutManager="LinearLayoutManager">
 
-            <LinearLayout
-                android:id="@+id/checkBoxLinearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp">
-
-                <CheckBox
-                    android:id="@+id/checkBoxA"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxB"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxC"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxD"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxE"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxF"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxG"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxH"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxI"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxJ"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxK"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxL"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxM"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxN"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxO"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-            </LinearLayout>
-        </ScrollView>
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,13 +24,11 @@ class ItemCardAdapter(ownedItems: OrderedRealmCollection<Item?>?) : RealmRecycle
     override fun onBindViewHolder(holder: ItemCardAdapter.ItemCardViewHolder, position: Int) {
         val item = getItem(position)
         holder.itemName.text = item?.cardName
-        //holder.itemDesc.text = item.cardDesc
-        //Picasso.get().load(item.cardImageUrl).into(holder.itemImage)
+        Picasso.get().load("file:///android_asset/item/${item?.cardImageUrl}.png").into(holder.itemImage)
     }
 
     class ItemCardViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val itemImage: ImageView = view.findViewById(R.id.itemImage)
         val itemName: TextView = view.findViewById(R.id.itemName)
-        //val itemDesc: TextView = view.findViewById(R.id.itemDesc)
     }
 }

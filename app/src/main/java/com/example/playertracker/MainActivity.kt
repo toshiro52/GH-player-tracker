@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.playertracker.model.AttackDeck
 import com.example.playertracker.model.SharedPref
 import com.example.playertracker.realm.RealmDatabaseFacade
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
         SharedPref.init(this)
         RealmDatabaseFacade.init(configuration)
+        AttackDeck.setUpBasicAttackDeck()
 
 
 

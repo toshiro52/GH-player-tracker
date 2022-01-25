@@ -3,10 +3,7 @@ package com.example.playertracker.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.playertracker.model.MAX_CHECKMARK_COUNT
-import com.example.playertracker.model.MAX_LEVEL
-import com.example.playertracker.model.Player
-import com.example.playertracker.model.SharedPref
+import com.example.playertracker.model.*
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
