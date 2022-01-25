@@ -8,14 +8,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.playertracker.databinding.FragmentPerkBinding
+import com.example.playertracker.realm.RealmDatabaseFacade
 
 class PerkFragment : Fragment() {
 
     private var _binding: FragmentPerkBinding? = null
     private val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView
-
-
 
 
     override fun onCreateView(
@@ -32,7 +31,7 @@ class PerkFragment : Fragment() {
 
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
-            //adapter =
+            adapter = PerkCardAdapter(RealmDatabaseFacade.getAvailablePerks())
         }
     }
 
