@@ -9,7 +9,10 @@ import com.google.android.material.checkbox.MaterialCheckBox
 import io.realm.OrderedRealmCollection
 import io.realm.RealmRecyclerViewAdapter
 
-class PerkCardAdapter(availablePerks: OrderedRealmCollection<PerkData?>?) : RealmRecyclerViewAdapter<PerkData?, PerkCardAdapter.PerkCardViewHolder>(availablePerks, true) {
+class PerkCardAdapter(
+    availablePerks: OrderedRealmCollection<PerkData?>?,
+    private val itemClickListener: (perkData: PerkData) -> Unit
+        ): RealmRecyclerViewAdapter<PerkData?, PerkCardAdapter.PerkCardViewHolder>(availablePerks, true) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -23,6 +26,15 @@ class PerkCardAdapter(availablePerks: OrderedRealmCollection<PerkData?>?) : Real
         val item = getItem(position)
         holder.checkBox.text = item?.perkText
         holder.checkBox.isChecked = item?.isSelected!!
+        holder.checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+            if(isChecked){
+                holder.checkBox.isClickable = false
+                itemClickListener(item)
+            }
+            else {
+                holder.checkBox.isClickable = true
+            }
+        }
     }
 
     class PerkCardViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {

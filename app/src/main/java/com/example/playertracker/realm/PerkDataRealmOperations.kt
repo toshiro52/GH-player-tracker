@@ -9,4 +9,17 @@ class PerkDataRealmOperations(private val config: RealmConfiguration) {
     fun getAvailablePerks(characterClass: String) = realm.where(PerkData::class.java)
         .equalTo("designatedClass", characterClass)
         .findAll()
+
+    fun updatePerkStatus(characterClass: String, perkCode: String) {
+        realm.executeTransaction { r ->
+            val target = r.where(PerkData::class.java)
+                .equalTo("designatedClass", characterClass)
+                .equalTo("perkCode", perkCode)
+                .findFirst()
+            target?.isSelected = true
+            r.insertOrUpdate(target)
+        }
+    }
+
+
 }

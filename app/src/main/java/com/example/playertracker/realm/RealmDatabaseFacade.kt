@@ -31,6 +31,6 @@ object RealmDatabaseFacade {
 
     fun getAttackCard(attackValue: String, characterClass: String) = attackCardOperations.getAttackCard(attackValue, characterClass)
 
-
+    fun updatePerkStatus(perkCode: String) = perkDataOperations.updatePerkStatus(Player.getClass()!!, perkCode)
 
 }

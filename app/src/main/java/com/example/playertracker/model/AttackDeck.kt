@@ -1,5 +1,6 @@
 package com.example.playertracker.model
 
+import android.util.Log
 import com.example.playertracker.realm.AttackCard
 import com.example.playertracker.realm.RealmDatabaseFacade
 
@@ -26,10 +27,11 @@ object AttackDeck {
         for(i in 1..occurrences) {
             attackModifierDeck.add(card)
         }
+        Log.d("TAG", "Deck size: ${attackModifierDeck.size}")
     }
 
-    fun removeAttackCard(card: AttackCard) {
-        attackModifierDeck.remove(card)
+    fun removeAttackCard(cardValue: String, occurrences: Int, characterClass: String) {
+        //attackModifierDeck.remove(card)
     }
 
     fun createIterator() = AttackDeckIterator(this)
