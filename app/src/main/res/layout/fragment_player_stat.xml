@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PlayerStatFragment">
+    tools:context=".ui.PlayerStatFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -76,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:hint="@string/exp_points"
-                    app:layout_constraintStart_toEndOf="@+id/level">>
+                    app:layout_constraintStart_toEndOf="@+id/level">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/experience"

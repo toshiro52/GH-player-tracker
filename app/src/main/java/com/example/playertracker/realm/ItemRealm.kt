@@ -1,6 +1,5 @@
 package com.example.playertracker.realm
 
-import com.example.playertracker.ItemType
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import io.realm.annotations.Required

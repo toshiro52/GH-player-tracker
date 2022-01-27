@@ -2,14 +2,12 @@ package com.example.playertracker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.playertracker.model.AttackDeck
 import com.example.playertracker.model.SharedPref
 import com.example.playertracker.realm.RealmDatabaseFacade
+import com.example.playertracker.ui.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import io.realm.Realm
 import io.realm.RealmConfiguration

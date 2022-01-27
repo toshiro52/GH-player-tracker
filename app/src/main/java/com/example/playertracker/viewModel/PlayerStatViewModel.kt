@@ -74,8 +74,7 @@ class PlayerStatViewModel: ViewModel() {
         saveExperience(calculateStartingExperience(level).toInt())
         saveCheckmarks(calculateStartingCheckmarks(level))
         savePerks(calculateStartingPerks(level))
-        RealmDatabaseFacade.resetItems()
-        RealmDatabaseFacade.resetPerks()
+        RealmDatabaseFacade.resetDB()
     }
 
     private fun saveName(input: String) {

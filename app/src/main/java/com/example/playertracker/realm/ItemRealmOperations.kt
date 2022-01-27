@@ -8,12 +8,15 @@ import io.realm.RealmResults
 class ItemRealmOperations(private val config: RealmConfiguration) {
     private val realm = Realm.getInstance(config)
 
-    fun getOwnedItems(): RealmResults<Item> = realm.where(Item::class.java).equalTo("isOwned", true).findAll()
+    fun getOwnedItems(): RealmResults<Item> =
+        realm.where(Item::class.java).equalTo("isOwned", true).findAll()
 
-    fun changeToOwnedItem(itemId: Int) { //Update Item field "isOwned" to true
+    fun changeToOwnedItem(itemId: Int) {
 
         realm.executeTransaction { r ->
-            val target = r.where(Item::class.java).equalTo("cardReferenceNumber", itemId).findFirst()
+            val target = r.where(Item::class.java)
+                .equalTo("cardReferenceNumber", itemId)
+                .findFirst()
             target?.isOwned = true
             r.insertOrUpdate(target)
         }
@@ -21,7 +24,9 @@ class ItemRealmOperations(private val config: RealmConfiguration) {
 
     fun changeFromOwnedItem(itemId: Int) {
         realm.executeTransaction { r ->
-            val target = r.where(Item::class.java).equalTo("cardReferenceNumber", itemId).findFirst()
+            val target = r.where(Item::class.java)
+                .equalTo("cardReferenceNumber", itemId)
+                .findFirst()
             target?.isOwned = false
             r.insertOrUpdate(target)
         }
@@ -29,7 +34,9 @@ class ItemRealmOperations(private val config: RealmConfiguration) {
 
     fun resetItems() {
         realm.executeTransaction { r ->
-            val ownedItems = r.where(Item::class.java).equalTo("isOwned", true).findAll()
+            val ownedItems = r.where(Item::class.java)
+                .equalTo("isOwned", true)
+                .findAll()
             ownedItems.setBoolean("isOwned", false)
         }
     }

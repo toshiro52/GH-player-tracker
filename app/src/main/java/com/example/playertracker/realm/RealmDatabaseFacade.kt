@@ -16,6 +16,11 @@ object RealmDatabaseFacade {
         perkDataOperations = PerkDataRealmOperations(config)
     }
 
+    fun resetDB() {
+        itemRealmOperations.resetItems()
+        perkDataOperations.resetPerks()
+    }
+
     fun getOwnedItems() = itemRealmOperations.getOwnedItems()
 
     fun changeOwnedStatus(itemId: Int, ownedStatus: Boolean) {
@@ -25,16 +30,15 @@ object RealmDatabaseFacade {
             itemRealmOperations.changeFromOwnedItem(itemId)
     }
 
-    fun getAvailableAbilitiCards() = abilityCardRealmOpeations.getAvailableAbilityCards(Player.getClass()!!)
+    fun getAvailableAbilitiCards() =
+        abilityCardRealmOpeations.getAvailableAbilityCards(Player.getClass()!!)
 
-    fun getAvailablePerks() = perkDataOperations.getAvailablePerks(Player.getClass()!!)
+    fun getAvailablePerks() =
+        perkDataOperations.getAvailablePerks(Player.getClass()!!)
 
-    fun getAttackCard(attackValue: String, characterClass: String) = attackCardOperations.getAttackCard(attackValue, characterClass)
+    fun getAttackCard(attackValue: String, characterClass: String) =
+        attackCardOperations.getAttackCard(attackValue, characterClass)
 
-    fun updatePerkStatus(perkCode: String) = perkDataOperations.updatePerkStatus(Player.getClass()!!, perkCode)
-
-    fun resetItems() = itemRealmOperations.resetItems()
-
-    fun resetPerks() = perkDataOperations.resetPerks()
-
+    fun updatePerkStatus(perkCode: String) =
+        perkDataOperations.updatePerkStatus(Player.getClass()!!, perkCode)
 }
