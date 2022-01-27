@@ -23,10 +23,10 @@ class AbilityCardAdapter(availableAbilityCards: OrderedRealmCollection<AbilityCa
 
     override fun onBindViewHolder(holder: AbilityCardViewHolder, position: Int) {
         val ability = getItem(position)
-        holder.abilityCardName.text = ability?.cardName
-        holder.initiativeValue.text = ability?.Initiative.toString()
-        holder.cardLevel.text = ability?.cardLevel
-        //Picasso.get().load(ability?.cardImageURL).into(holder.abilityCardImage)
+        holder.abilityCardName.text = "Card name: "+ability?.cardName
+        holder.initiativeValue.text = "Initiative: "+ability?.Initiative.toString()
+        holder.cardLevel.text = "Card level: "+ability?.cardLevel
+        Picasso.get().load("file:///android_asset/abilityCard/${ability?.cardImageURL}.png").into(holder.abilityCardImage)
     }
 
     class AbilityCardViewHolder(private val view: View) : RecyclerView.ViewHolder(view){

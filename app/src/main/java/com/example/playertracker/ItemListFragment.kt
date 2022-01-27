@@ -33,7 +33,6 @@ class ItemListFragment : Fragment() {
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = ItemCardAdapter(RealmDatabaseFacade.getOwnedItems())
-
         }
 
         setupButtons()

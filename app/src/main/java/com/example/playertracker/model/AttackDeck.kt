@@ -6,12 +6,21 @@ import com.example.playertracker.realm.RealmDatabaseFacade
 
 object AttackDeck {
     val attackModifierDeck: MutableList<AttackCard> = mutableListOf()
+    var deckState: AttackDeckState = RegularDeckState()
 
     fun shuffleDeck() {
         attackModifierDeck.shuffle()
     }
 
+    fun changeDeckState(needsShuffle: Boolean) {
+        deckState = when(needsShuffle) {
+            true -> ShuffleDeckState()
+            false -> RegularDeckState()
+        }
+    }
+
     fun setUpBasicAttackDeck() {
+        attackModifierDeck.clear()
         addAttackCard("+0", 6, "Basic")
         addAttackCard("+1", 5, "Basic")
         addAttackCard("+2", 1, "Basic")
@@ -31,7 +40,10 @@ object AttackDeck {
     }
 
     fun removeAttackCard(cardValue: String, occurrences: Int, characterClass: String) {
-        //attackModifierDeck.remove(card)
+        for(i in 1..occurrences) {
+            attackModifierDeck.removeAt(attackModifierDeck.indexOfFirst { it.designatedClass == characterClass && it.attackValue == cardValue })
+        }
+        Log.d("TAG", "Deck size: ${attackModifierDeck.size}")
     }
 
     fun createIterator() = AttackDeckIterator(this)
@@ -54,5 +66,3 @@ class AttackDeckIterator(private val collection: AttackDeck) {
     }
 
 }
-
-// jesli obserwer bedzie chcial przetasowac, to tworzymy nowy iterator

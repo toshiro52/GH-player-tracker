@@ -33,4 +33,8 @@ object RealmDatabaseFacade {
 
     fun updatePerkStatus(perkCode: String) = perkDataOperations.updatePerkStatus(Player.getClass()!!, perkCode)
 
+    fun resetItems() = itemRealmOperations.resetItems()
+
+    fun resetPerks() = perkDataOperations.resetPerks()
+
 }

@@ -10,4 +10,5 @@ class AttackCardOperations(private val config: RealmConfiguration) {
         .equalTo("designatedClass", characterClass)
         .equalTo("attackValue", attackValue)
         .findFirst()!!
+
 }

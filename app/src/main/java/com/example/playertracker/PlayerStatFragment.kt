@@ -31,7 +31,7 @@ class PlayerStatFragment : Fragment() {
             newName -> binding.charNameTextField.setText(newName)
         })
 
-        viewModel.characteClass.observe(viewLifecycleOwner, {
+        viewModel.characterClass.observe(viewLifecycleOwner, {
             newClass -> binding.classNameTextField.setText(newClass)
         })
 
@@ -51,7 +51,6 @@ class PlayerStatFragment : Fragment() {
             newCheckmarks -> binding.checkmarksTextField.setText(newCheckmarks.toString())
         })
 
-
         return binding.root
     }
 
@@ -61,11 +60,6 @@ class PlayerStatFragment : Fragment() {
         setUpText()
         setUpButtons()
     }
-    /*
-    override fun onResume() {
-        super.onResume()
-        setUpText()
-    }*/
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -90,20 +84,15 @@ class PlayerStatFragment : Fragment() {
     private fun changeExperience() {
         val dialog = ChangeExperienceDialogFragment()
         dialog.show(childFragmentManager, "Experience Gold Dialog")
-        //binding.experience.setText(viewModel.getExperience().toString())
-        //binding.levelTextField.setText(viewModel.getLevel().toString())
-
     }
 
     private fun changeGold() {
         val dialog = ChangeGoldDialogFragment()
         dialog.show(childFragmentManager, "Change Gold Dialog")
-        //binding.goldCountTextField.setText(viewModel.getGold().toString())
     }
 
     private fun changeCheckMarks() {
         viewModel.changeCheckmark()
-        //binding.checkmarksTextField.setText(viewModel.getCheckmarks().toString())
     }
 
     private fun createNewCharacter() {
@@ -119,6 +108,5 @@ class PlayerStatFragment : Fragment() {
         binding.experience.setText(viewModel.getExperience().toString())
         binding.goldCountTextField.setText(viewModel.getGold().toString())
         binding.checkmarksTextField.setText(viewModel.getCheckmarks().toString())
-
     }
 }

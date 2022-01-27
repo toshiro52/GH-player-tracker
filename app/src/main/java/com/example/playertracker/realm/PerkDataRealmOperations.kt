@@ -21,5 +21,13 @@ class PerkDataRealmOperations(private val config: RealmConfiguration) {
         }
     }
 
+    fun resetPerks() {
+        realm.executeTransaction { r ->
+            val target = r.where(PerkData::class.java)
+                .equalTo("isSelected", true)
+                .findAll()
+            target.setBoolean("isSelected", false)
+        }
+    }
 
 }

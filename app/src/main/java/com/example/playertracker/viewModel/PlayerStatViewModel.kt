@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.playertracker.model.*
+import com.example.playertracker.realm.RealmDatabaseFacade
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
@@ -14,7 +15,7 @@ class PlayerStatViewModel: ViewModel() {
         get() = _name
 
     private val _characterClass = MutableLiveData(getClass()!!)
-    val characteClass: LiveData<String>
+    val characterClass: LiveData<String>
         get() = _characterClass
 
     private val _level = MutableLiveData(getLevel())
@@ -73,56 +74,58 @@ class PlayerStatViewModel: ViewModel() {
         saveExperience(calculateStartingExperience(level).toInt())
         saveCheckmarks(calculateStartingCheckmarks(level))
         savePerks(calculateStartingPerks(level))
+        RealmDatabaseFacade.resetItems()
+        RealmDatabaseFacade.resetPerks()
     }
 
-    fun saveName(input: String) {
+    private fun saveName(input: String) {
         _name.value = input
         Player.setName(input)
         SharedPref.saveName(input)
     }
 
-    fun saveClass(input: String) {
+    private fun saveClass(input: String) {
         _characterClass.value = input
         Player.setCharacterClass(input)
         SharedPref.saveClass(input)
     }
 
-    fun saveLevel(input: Int) {
+    private fun saveLevel(input: Int) {
         _level.value = input
         Player.setLevel(input)
         SharedPref.saveLevel(input)
     }
 
-    fun saveExperience(input: Int) {
+    private fun saveExperience(input: Int) {
         _experience.value = input
         Player.setExperience(input)
         SharedPref.saveExperience(input)
     }
 
-    fun saveCheckmarks(input: Int) {
+    private fun saveCheckmarks(input: Int) {
         _checkmarks.value = input
         Player.setCheckmarks(input)
         SharedPref.saveCheckmarks(input)
     }
 
-    fun saveGold(input: Int) {
+    private fun saveGold(input: Int) {
         _gold.value = input
         Player.setGold(input)
         SharedPref.saveGold(input)
     }
 
-    fun savePerks(input: Int) {
+    private fun savePerks(input: Int) {
         Player.setPerks(input)
         SharedPref.savePerks(input)
     }
 
-    fun calculateStartingGold(inputLevel: Int) = 15*(inputLevel+1)
+    private fun calculateStartingGold(inputLevel: Int) = 15*(inputLevel+1)
 
-    fun calculateStartingExperience(inputLevel: Int) = 2.5*(inputLevel*inputLevel) + 37.5*inputLevel-40
+    private fun calculateStartingExperience(inputLevel: Int) = 2.5*(inputLevel*inputLevel) + 37.5*inputLevel-40
 
-    fun calculateStartingCheckmarks(inputLevel: Int) = Player.getRetiredChars() + inputLevel - 1 // Do viewModel
+    private fun calculateStartingCheckmarks(inputLevel: Int) = Player.getRetiredChars() + inputLevel - 1
 
-    fun calculateStartingPerks(inputLevel: Int) = calculateStartingCheckmarks(inputLevel) % 3
+    private fun calculateStartingPerks(inputLevel: Int) = calculateStartingCheckmarks(inputLevel) % 3
 
 
 }

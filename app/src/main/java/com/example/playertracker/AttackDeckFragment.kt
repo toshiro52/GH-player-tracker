@@ -28,13 +28,17 @@ class AttackDeckFragment : Fragment() {
             newUrl -> Picasso.get().load("file:///android_asset/attackCard/$newUrl.png").into(binding.drawnCardImageView)
         })
 
+        viewModel.deckState.observe(viewLifecycleOwner, {
+            newState ->
+            binding.deckStateTextView.text = viewModel.getDeckStateMessage()
+        })
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpButtons()
-        setUpText()
     }
 
     override fun onDestroyView() {
@@ -49,10 +53,6 @@ class AttackDeckFragment : Fragment() {
         binding.refreshDeckImageView.setOnClickListener {
             shuffleDeck()
         }
-    }
-
-    private fun setUpText() {
-        //liveData binding updating deckSize text
     }
 
     private fun drawCard() {

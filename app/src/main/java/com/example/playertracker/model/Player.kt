@@ -16,9 +16,6 @@ object Player {
     private var checkmarks = SharedPref.getCheckmarks()
     private var perkCount = SharedPref.getPerks()
     private var retiredCharacters = SharedPref.getRetiredChars()
-    //private lateinit var state: CharacterState
-
-    //var selectedAbilities: Set<AbilityCard> = setOf()// Jak bardzo potrzebne skoro w bazie jest to trzymane
 
     fun setName(newName: String) {
         name = newName
