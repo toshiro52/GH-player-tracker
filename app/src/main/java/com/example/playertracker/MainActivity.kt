@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentManager
 import com.example.playertracker.model.AttackDeck
 import com.example.playertracker.model.SharedPref
 import com.example.playertracker.realm.RealmDatabaseFacade
-import com.example.playertracker.ui.*
+import com.example.playertracker.view.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import io.realm.Realm
 import io.realm.RealmConfiguration

@@ -13,10 +13,10 @@ class PerkViewModel : ViewModel() {
     }
 
     fun parsePerkCode(perkCode: String, characterClass: String) {
+        if(perkCode == "empty")
+            return
         val start = perkCode.indexOf('|')
         val end = perkCode.indexOf('|', start + 1)
-        if(perkCode.substring(start+1, end) == "empty")
-            return
         when(perkCode[0]) {
             'A' -> AttackDeck.addAttackCard(perkCode.substring(start+1, end), perkCode[1].toString().toInt(), characterClass)
             'R' -> AttackDeck.removeAttackCard(perkCode.substring(start+1, end), perkCode[1].toString().toInt(), "Basic")

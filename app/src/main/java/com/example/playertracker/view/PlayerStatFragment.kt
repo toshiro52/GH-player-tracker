@@ -1,4 +1,4 @@
-package com.example.playertracker.ui
+package com.example.playertracker.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.playertracker.databinding.FragmentPlayerStatBinding
-import com.example.playertracker.ui.ChangeExperienceDialogFragment
-import com.example.playertracker.ui.ChangeGoldDialogFragment
-import com.example.playertracker.ui.CreateCharacterFragment
 import com.example.playertracker.viewModel.PlayerStatViewModel
 
 class PlayerStatFragment : Fragment() {

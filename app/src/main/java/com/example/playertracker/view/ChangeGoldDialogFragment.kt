@@ -1,4 +1,4 @@
-package com.example.playertracker.ui
+package com.example.playertracker.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import android.widget.Button
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.example.playertracker.R
-import com.example.playertracker.model.Player
 import com.example.playertracker.viewModel.PlayerStatViewModel
 import com.google.android.material.textfield.TextInputEditText
 

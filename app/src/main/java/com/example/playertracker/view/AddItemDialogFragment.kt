@@ -1,4 +1,4 @@
-package com.example.playertracker.ui
+package com.example.playertracker.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

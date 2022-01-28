@@ -1,4 +1,4 @@
-package com.example.playertracker.ui
+package com.example.playertracker.view
 
 import android.os.Bundle
 import android.util.Log
@@ -36,11 +36,6 @@ class CreateCharacterFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        /*
-        setStyle(
-            STYLE_NORMAL,
-            android.R.style.Theme_Black_NoTitleBar_Fullscreen
-        )*/
         setStyle(STYLE_NORMAL, R.style.fullscreenalert)
     }
 
@@ -53,7 +48,6 @@ class CreateCharacterFragment : DialogFragment() {
     }
 
     private fun setUpButtons() {
-        //binding.toolbar.inflateMenu(R.menu.top_app_bar)
         binding.toolbar.setNavigationOnClickListener{
             dismiss()
         }
